@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new ErrorResponse(500, "Something went wrong"));
+                .body(new ErrorResponse(500, ex.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
